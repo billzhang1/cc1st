@@ -18,6 +18,7 @@ class Solution(object):
 	
     def uniquechar2(self, string):
 #tc is O(n), sc is O(1)
+#ASCII uses 8 bits -> 256 characters
 	boolean_list = []
 	for i in range(256):
 	    boolean_list.append(True)
