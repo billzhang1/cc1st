@@ -17,6 +17,7 @@ class Solution(object):
             return True
 	
     def uniquechar2(self, string):
+#tc is O(n), sc is O(1)
 	boolean_list = []
 	for i in range(256):
 	    boolean_list.append(True)
