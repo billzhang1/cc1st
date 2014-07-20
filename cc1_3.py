@@ -13,6 +13,7 @@ class Solution(object):
 		return False
 
     def permutation2(self, str1, str2):
+	#TC is O(n), SC is O(n)
 	if len(str1) != len(str2):
 	    return False
 
