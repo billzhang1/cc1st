@@ -31,6 +31,24 @@ class Solution(object):
 	else:
 	    return True
 
+    def permutation3(self, str1, str2):
+    #TC is O(n), SC is O(1)
+	if len(str1) != len(str2):
+	     return False
+
+	letters = []
+	for i in range(len(str1)):
+	    letters.append(str[i])
+
+	for i in range(len(str2)):
+	    if str2[i] in letters:
+		letters.remove(str2[i])
+
+	if len(letters) != 0:
+	    return False
+	else:
+	    return True 
+
 
 s = Solution()
 print s.permutation2('dog', 'god')
