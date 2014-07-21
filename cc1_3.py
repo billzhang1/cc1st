@@ -13,7 +13,7 @@ class Solution(object):
 		return False
 
     def permutation2(self, str1, str2):
-	#TC is O(n), SC is O(n)
+	#TC is O(n), SC is O(1) for certain set of characters, say ascii
 	if len(str1) != len(str2):
 	    return False
 
@@ -22,10 +22,10 @@ class Solution(object):
 	    letters.append(0)
 	
 	for char in str1:
-	    letters[ord(char)] = letters[ord(char)] + 1 
+	    letters[ord(char)] += 1 
 
 	for char2 in str2:
-	    letters[ord(char2)]	= letters[ord(char2)] - 1
+	    letters[ord(char2)]	-= 1
 	    if letters[ord(char2)] < 0:
 		return False
 	else:
