@@ -15,6 +15,7 @@ class Solution(object):
 		new_size += 1 + len(str(count))	
 		return new_size
 
+	#TC is O(n) SC is O(n)
 	def compress(self, string):
 		size = self.compressed_size(string)
 		if size >= len(string):
