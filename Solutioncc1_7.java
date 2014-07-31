@@ -21,7 +21,7 @@ public class Solutioncc1_7 {
 			}
 		}
 	}
-
+	//TC : O(M*N), SC: O(1)
 	public static void setZero2(int[][] matrix) {
 		boolean rowHasZero = false;
 		boolean columnHasZero = false;
