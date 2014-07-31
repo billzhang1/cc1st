@@ -73,6 +73,7 @@ public class Solutioncc1_5 {
 		return index;
 	}	
 
+	//TC is O(n), SC is O(n)
 	public static String compress3(String original_str) {
 		int size = compressed_size(original_str);
 		if ( size >= original_str.length()){
