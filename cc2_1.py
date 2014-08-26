@@ -24,6 +24,7 @@ def linkedlist_printer(node):
 	print
 	
 def duplicate_remover(head):
+	# TC is 0(n), SC is O(n)
 	test_set = set([])
 	test_set.add(head.data)
 	prev = head
@@ -38,11 +39,29 @@ def duplicate_remover(head):
 		current = current.next
 	return head
 	
+def nobuffer_dupremover(head):
+	# TC is O(n^2), SC is O(1)
+	if head == None:
+		return
+	
+	current = head
+	while current != None:
+		runner = current
+		while runner.next != None:
+			if runner.next.data == current.data:
+				runner.next = runner.next.next
+			else:
+				runner = runner.next
+		current = current.next
+	
+	return head
+	
 list_a = linkedlist_generator(10)
 print ("before deletion: ")
 linkedlist_printer(list_a)
 print ("after deletion: ")
-list_a = duplicate_remover(list_a)
+#list_a = duplicate_remover(list_a)
+list_a = nobuffer_dupremover(list_a)
 linkedlist_printer(list_a)
 
 	
