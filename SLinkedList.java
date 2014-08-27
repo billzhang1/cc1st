@@ -5,11 +5,11 @@ public class SLinkedList {
 	
 	public SLinkedList(int count) {
 		Random rand = new Random();
-		head = new Node(rand.nextInt(10) + 1);
+		head = new Node(rand.nextInt(100) + 1);
 		count --;
 		Node current = head;
 		while (count > 0) {
-			Node newNode = new Node(rand.nextInt(10) + 1);
+			Node newNode = new Node(rand.nextInt(100) + 1);
 			current.next = newNode;
 			current = newNode;
 			count --;
