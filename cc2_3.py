@@ -30,6 +30,7 @@ def linkedlist_printer(node):
 	print
 	
 def delete_node(node):
+	#TC is O(1), SC is O(1)
 	if not node:
 		return False
 	temp = node.next
