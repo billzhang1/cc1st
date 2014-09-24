@@ -28,6 +28,28 @@ def linkedlist_printer(node):
 		print node.data,
 		node = node.next
 	print
+	
+def reverse_list(node):
+	tail = None
+	next = node.next
+	while next != None:
+		node.next = tail
+		tail = node
+		node = next
+		next = node.next
+	node.next = tail
+	return node
+
+def reverse_list2(head):
+	cp = head
+	prev = None
+	while cp != None:
+		next = cp.next
+		cp.next = prev
+		prev = cp
+		cp = next
+	head = prev
+	return head
 
 def add_lists(l1, l2, carry = 0):
 	#TC is O(M+N), SC is O(max(M,N))
@@ -52,8 +74,17 @@ def add_lists(l1, l2, carry = 0):
 		result.next = more
 		
 	return result
-		
 	
+def follow_up(l1, l2):
+	#the reverse is in place. TC is O(M+N), SC is O(max(M,N))
+	if l1 == None or l2 == None:
+		return None
+	l1 = reverse_list(l1)
+	l2 = reverse_list(l2)
+	sum_list = add_lists(l1, l2)
+	
+	return reverse_list(sum_list)
+		
 	
 l1_head = linkedlist_generator(3)
 l2_head = linkedlist_generator(3)
@@ -63,3 +94,7 @@ linkedlist_printer(l2_head)
 print "sum:"
 new_head = add_lists(l1_head, l2_head)
 linkedlist_printer(new_head)
+print "followup sum: "
+new_head2 = follow_up(l1_head, l2_head)
+linkedlist_printer(new_head2)
+
